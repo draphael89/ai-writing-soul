@@ -1,0 +1,83 @@
+:root { color-scheme: light; --ink: #1d1c19; --muted: #6d685f; --rule: #d8d2c8; --paper: #f7f4ee; --panel: #eee9df; }
+* { box-sizing: border-box; }
+html { background: var(--paper); color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+body { margin: 0; }
+main { width: min(100% - 40px, 760px); margin: 0 auto; padding: 76px 0 112px; }
+a { color: inherit; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--muted); }
+.skip-link { position: absolute; left: -9999px; top: 0; background: var(--ink); color: var(--paper); padding: 10px 16px; z-index: 10; }
+.skip-link:focus { left: 0; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Masthead / page header */
+header.masthead { margin-bottom: 72px; }
+p.eyebrow.site-nav { margin: 0 0 44px; }
+header.entry-header { margin-bottom: 0; }
+.entry-body > :first-child { margin-top: 48px; }
+.entry-body > .audio-block:first-child { margin-top: 38px; }
+.eyebrow { margin: 0 0 18px; color: var(--muted); font: 600 0.72rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0.11em; text-transform: uppercase; }
+.eyebrow a { text-decoration: none; }
+.eyebrow a:hover { text-decoration: underline; text-decoration-color: var(--muted); }
+h1 { max-width: 680px; margin: 0; font-size: clamp(2.55rem, 7vw, 4.55rem); font-weight: 500; line-height: 0.98; letter-spacing: -0.035em; }
+.dek { max-width: 630px; margin: 30px 0 0; color: #444039; font-size: 1.22rem; line-height: 1.58; }
+.entry-date { margin: 26px 0 0; color: var(--muted); font: 600 0.72rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0.11em; text-transform: uppercase; }
+
+/* Audio player */
+.audio-block { margin-top: 38px; padding: 22px 24px 24px; border: 1px solid var(--rule); background: rgba(255,255,255,.24); }
+.audio-label { display: block; margin-bottom: 12px; color: var(--muted); font: 600 0.7rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .09em; text-transform: uppercase; }
+.custom-player audio { display: none; }
+.custom-player { display: grid; grid-template-columns: 44px 1fr auto; gap: 14px; align-items: center; }
+.play-button { width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--ink); color: var(--paper); font-size: 1rem; cursor: pointer; }
+.play-button:focus-visible, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.progress { position: relative; height: 4px; background: var(--rule); overflow: hidden; cursor: pointer; padding: 0; border: 0; display: block; width: 100%; }
+.progress:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.progress-fill { display: block; width: 0%; height: 100%; background: var(--ink); }
+.time { color: var(--muted); font: 600 .76rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; }
+
+/* Entry body */
+.entry-body section { padding-top: 56px; margin-top: 56px; border-top: 1px solid var(--rule); }
+h2 { margin: 0 0 12px; font-size: 2rem; font-weight: 500; letter-spacing: -0.02em; }
+.section-note { margin: 0 0 34px; color: var(--muted); font-size: 1rem; line-height: 1.5; }
+.transcript { font-size: 1.08rem; line-height: 1.78; }
+.transcript p { margin: 0 0 1.35em; overflow-wrap: anywhere; }
+.placeholder { padding: 30px; border: 1px dashed #aaa297; background: var(--panel); color: var(--muted); font-size: 1.05rem; line-height: 1.55; }
+.placeholder p { margin: 0; }
+
+/* Defaults for plain-Markdown entries (no section markup needed) */
+.entry-body { font-size: 1.08rem; line-height: 1.78; }
+.entry-body > p, .entry-body > ul, .entry-body > ol, .entry-body > blockquote { margin: 0 0 1.35em; }
+.entry-body > h2 { margin: 56px 0 12px; padding-top: 56px; border-top: 1px solid var(--rule); }
+.entry-body > h3 { margin: 2.2em 0 0.6em; font-size: 1.35rem; font-weight: 500; letter-spacing: -0.01em; }
+.entry-body > h2 + p, .entry-body > h3 + p { margin-top: 0; }
+.entry-body blockquote { padding-left: 22px; border-left: 2px solid var(--rule); color: #444039; font-style: italic; }
+.entry-body img { max-width: 100%; height: auto; }
+.entry-body hr { margin: 48px 0; border: 0; border-top: 1px solid var(--rule); }
+.entry-body code { font: 0.92em/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--panel); padding: 0.1em 0.35em; }
+.entry-body pre { background: var(--panel); border: 1px solid var(--rule); padding: 18px 20px; overflow-x: auto; }
+.entry-body pre code { background: none; padding: 0; }
+
+/* Report preview link */
+.report-link { display: block; margin: 1.25rem 0 2rem; text-decoration: none; color: inherit; }
+.report-link img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 8px; background: #fff; }
+.report-link span { display: inline-block; margin-top: .65rem; color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.report-link:hover span { text-decoration-color: var(--muted); }
+
+/* Index (home) entry list */
+.entry-list { margin: 0; padding: 0; list-style: none; }
+.entry-list li { padding-top: 44px; margin-top: 44px; border-top: 1px solid var(--rule); }
+.entry-list .entry-meta { display: flex; gap: 18px; align-items: baseline; margin: 0 0 14px; color: var(--muted); font: 600 0.72rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0.11em; text-transform: uppercase; }
+.entry-list h2 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.12; }
+.entry-list h2 a { text-decoration: none; }
+.entry-list h2 a:hover { text-decoration: underline; text-decoration-color: var(--rule); }
+.entry-list .entry-summary { max-width: 630px; margin: 14px 0 0; color: #444039; font-size: 1.08rem; line-height: 1.62; }
+
+footer { margin-top: 70px; padding-top: 28px; border-top: 1px solid var(--rule); color: var(--muted); font-size: .86rem; }
+footer p { margin: 0; }
+
+@media (max-width: 560px) {
+  main { width: min(100% - 28px, 760px); padding-top: 42px; }
+  header.masthead { margin-bottom: 50px; }
+  .entry-body section { margin-top: 42px; padding-top: 42px; }
+  .audio-block { padding: 18px; }
+  .entry-list li { padding-top: 34px; margin-top: 34px; }
+}

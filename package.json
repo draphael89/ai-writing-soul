@@ -1,0 +1,14 @@
+{
+  "name": "ai-writing-soul",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A quiet, text-first site of entries about AI, writing, and the soul of form.",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs && npx serve dist"
+  },
+  "dependencies": {
+    "marked": "18.0.11"
+  }
+}

@@ -1,59 +1,27 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Note About AI Writing</title>
-<style>
-  :root { color-scheme: light; --ink: #1d1c19; --muted: #6d685f; --rule: #d8d2c8; --paper: #f7f4ee; --panel: #eee9df; }
-  * { box-sizing: border-box; }
-  html { background: var(--paper); color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
-  body { margin: 0; }
-  main { width: min(100% - 40px, 760px); margin: 0 auto; padding: 76px 0 112px; }
-  header { margin-bottom: 72px; }
-  .eyebrow { margin: 0 0 18px; color: var(--muted); font: 600 0.72rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0.11em; text-transform: uppercase; }
-  h1 { max-width: 680px; margin: 0; font-size: clamp(2.55rem, 7vw, 4.55rem); font-weight: 500; line-height: 0.98; letter-spacing: -0.035em; }
-  .dek { max-width: 630px; margin: 30px 0 0; color: #444039; font-size: 1.22rem; line-height: 1.58; }
-  .audio-block { margin-top: 38px; padding: 22px 24px 24px; border: 1px solid var(--rule); background: rgba(255,255,255,.24); }
-  .audio-label { display: block; margin-bottom: 12px; color: var(--muted); font: 600 0.7rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .09em; text-transform: uppercase; }
-  audio { display: none; }
-  .custom-player { display: grid; grid-template-columns: 44px 1fr auto; gap: 14px; align-items: center; }
-  .play-button { width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--ink); color: var(--paper); font-size: 1rem; cursor: pointer; }
-  .progress { height: 4px; background: var(--rule); overflow: hidden; }
-  .progress-fill { width: 0%; height: 100%; background: var(--ink); }
-  .time { color: var(--muted); font: 600 .76rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; }
-  section { padding-top: 56px; margin-top: 56px; border-top: 1px solid var(--rule); }
-  h2 { margin: 0 0 12px; font-size: 2rem; font-weight: 500; letter-spacing: -0.02em; }
-  .section-note { margin: 0 0 34px; color: var(--muted); font-size: 1rem; line-height: 1.5; }
-  .transcript { font-size: 1.08rem; line-height: 1.78; }
-  .transcript p { margin: 0 0 1.35em; overflow-wrap: anywhere; }
-  .placeholder { padding: 30px; border: 1px dashed #aaa297; background: var(--panel); color: var(--muted); font-size: 1.05rem; line-height: 1.55; }
-  .placeholder p { margin: 0; }
-  footer { margin-top: 70px; color: var(--muted); font-size: .86rem; }
-  @media (max-width: 560px) { main { width: min(100% - 28px, 760px); padding-top: 42px; } header { margin-bottom: 50px; } section { margin-top: 42px; padding-top: 42px; } .audio-block { padding: 18px; } }
-</style>
-</head>
-<body>
-<main>
-  <header>
-    <p class="eyebrow">An experiment in layers</p>
-    <h1>A Note About AI Writing</h1>
-    <p class="dek">The same thought, passed through successive layers: the original voice note, the machine's rough transcript, a typo-only cleanup, a human essay, and a version written by Claude. The point is to make the change in form visible, not just argue that it happens.</p>
-    <div class="audio-block">
-      <span class="audio-label">Layer 01 · Original voice note · 9:37</span>
-      <audio preload="none"><source src="1-ai-writing-original-voice-note.mp3" type="audio/mpeg"></audio>
-      <div class="custom-player">
-        <button class="play-button" type="button" aria-label="Play original voice note">▶</button>
-        <div class="progress" aria-hidden="true"><div class="progress-fill"></div></div>
-        <span class="time">0:00 / 9:37</span>
-      </div>
-    </div>
-  </header>
-  <section id="raw-transcript">
-    <p class="eyebrow">Layer 02</p>
-    <h2>Raw transcript</h2>
-    <p class="section-note">The machine transcript, including its mistakes.</p>
-    <div class="transcript"><p>Okay, so, this is a note about AI writing. Look, my normal flow is to have these long and meandering streams of consciousness, which, this is one of them, and then basically, you know, take the transcript and ask an AI to clean it up. Which is necessary, because the AI makes typos when it transcribes.</p>
+---
+title: A Note About AI Writing
+date: 2026-08-29
+eyebrow: An experiment in layers
+summary: The same thought, passed through successive layers: the original voice note, the machine's rough transcript, a typo-only cleanup, a human essay, and a version written by Claude. The point is to make the change in form visible, not just argue that it happens.
+footnote: Draft structure · August 2026
+format: html
+---
+
+<div class="audio-block">
+  <span class="audio-label" id="voice-note-label">Layer 01 · Original voice note · 9:37</span>
+  <div class="custom-player" data-duration="577" aria-labelledby="voice-note-label">
+    <audio src="/1-ai-writing-original-voice-note.mp3" preload="metadata"></audio>
+    <button class="play-button" type="button" aria-label="Play original voice note">▶</button>
+    <button class="progress" type="button" aria-label="Seek within voice note"><span class="progress-fill"></span></button>
+    <span class="time">0:00 / 9:37</span>
+  </div>
+</div>
+
+<section id="raw-transcript">
+  <p class="eyebrow">Layer 02</p>
+  <h2>Raw transcript</h2>
+  <p class="section-note">The machine transcript, including its mistakes.</p>
+  <div class="transcript"><p>Okay, so, this is a note about AI writing. Look, my normal flow is to have these long and meandering streams of consciousness, which, this is one of them, and then basically, you know, take the transcript and ask an AI to clean it up. Which is necessary, because the AI makes typos when it transcribes.</p>
 <p>So, you know, in some sense, if you are simply using AI to make the transcript&#x27;s fidelity your words higher, that seems perfectly kosher. In some sense, you are decreasing the AI, because rather than, you know, rather than allowing AI to make mistakes in your words, you are allowing the ad to fix them. And I think I asked pretty good this, because if you tell it, you know, basically, I want you to, you know, go through my transcript, look for typos, look for transcription typos, and use context, uh, and the broad body of what I&#x27;m saying, to, you know, fill in the words that you think I intended.</p>
 <p>To me, that seems totally fine. Now, the second step is you can then have Claude try to, you know, package your arguments into something more coherent. And you can still say, hey, you know, use my own words.</p>
 <p>But at this point, when the structure of the argument is sort of... outsourced, you do lose the hardened soul of your writing. And so it&#x27;s interesting where, you know, I live in this world where I will do this quite a bit, where I&#x27;ll record a voice note, allow Claude to sort of massage it into a more structured argument. And then I have a different world where I&#x27;m just rapidly on Slack or an iMessage.</p>
@@ -85,12 +53,12 @@
 <p>Yeah, can this leverage the... the raw thought itself? I can imagine an interesting thing, which is almost like a blog. Starts the voice note.</p>
 <p>You include the audio, you include the transcript, then you include the quad cleaned up transcript. The very top, you would include your article, and maybe you also include a cloud article. So you can sort of compare the difference.</p>
 <p>That might be an interesting perform. I like that idea.</p></div>
-  </section>
-  <section id="cleaned-transcript">
-    <p class="eyebrow">Layer 03</p>
-    <h2>Cleaned transcript</h2>
-    <p class="section-note">Transcription errors fixed against context. The wording, structure, repetition, and fragments are otherwise untouched.</p>
-    <div class="transcript"><p>Okay, so, this is a note about AI writing. Look, my normal flow is to have these long and meandering streams of consciousness, which, this is one of them, and then basically, you know, take the transcript and ask an AI to clean it up. Which is necessary, because the AI makes typos when it transcribes.</p>
+</section>
+<section id="cleaned-transcript">
+  <p class="eyebrow">Layer 03</p>
+  <h2>Cleaned transcript</h2>
+  <p class="section-note">Transcription errors fixed against context. The wording, structure, repetition, and fragments are otherwise untouched.</p>
+  <div class="transcript"><p>Okay, so, this is a note about AI writing. Look, my normal flow is to have these long and meandering streams of consciousness, which, this is one of them, and then basically, you know, take the transcript and ask an AI to clean it up. Which is necessary, because the AI makes typos when it transcribes.</p>
 <p>So, you know, in some sense, if you are simply using AI to make the transcript&#x27;s fidelity to your words higher, that seems perfectly kosher. In some sense, you are decreasing the AI, because rather than, you know, rather than allowing AI to make mistakes in your words, you are allowing the AI to fix them. And I think AI is pretty good at this, because if you tell it, you know, basically, I want you to, you know, go through my transcript, look for typos, look for transcription typos, and use context, uh, and the broad body of what I&#x27;m saying, to, you know, fill in the words that you think I intended.</p>
 <p>To me, that seems totally fine. Now, the second step is you can then have Claude try to, you know, package your arguments into something more coherent. And you can still say, hey, you know, use my own words.</p>
 <p>But at this point, when the structure of the argument is sort of... outsourced, you do lose the human soul of your writing. And so it&#x27;s interesting where, you know, I live in this world where I will do this quite a bit, where I&#x27;ll record a voice note, allow Claude to sort of massage it into a more structured argument. And then I have a different world where I&#x27;m just rapidly on Slack or an iMessage.</p>
@@ -121,16 +89,16 @@
 <p>Yeah, can this leverage the... the raw thought itself? I can imagine an interesting thing, which is almost like a blog. Starts the voice note.</p>
 <p>You include the audio, you include the transcript, then you include the Claude-cleaned-up transcript. At the very top, you would include your article, and maybe you also include a Claude article. So you can sort of compare the difference.</p>
 <p>That might be an interesting format. I like that idea.</p></div>
-  </section>
-  <section id="claude-cleaned-version">
-    <p class="eyebrow">Layer 04</p>
-    <h2>A Note on AI Writing</h2>
-    <p class="section-note">Claude-cleaned version. <a href="pangram-report.pdf" target="_blank" rel="noopener" style="color:inherit; text-decoration-color:var(--muted); text-underline-offset:3px;">Pangram scores this version as 100% human-written.</a></p>
-    <a href="pangram-report.pdf" target="_blank" rel="noopener" aria-label="Open the full Pangram AI detection report" style="display:block; margin:1.25rem 0 2rem; text-decoration:none; color:inherit;">
-      <img src="pangram-report-page-1.png" alt="First page of the Pangram AI detection report showing a 100% human-written score" style="display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:8px; background:#fff;">
-      <span style="display:inline-block; margin-top:.65rem; color:var(--muted); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;">Open the full Pangram report (PDF)</span>
-    </a>
-    <div class="transcript">
+</section>
+<section id="claude-cleaned-version">
+  <p class="eyebrow">Layer 04</p>
+  <h2>A Note on AI Writing</h2>
+  <p class="section-note">Claude-cleaned version. <a href="/pangram-report.pdf" target="_blank" rel="noopener">Pangram scores this version as 100% human-written.</a></p>
+  <a class="report-link" href="/pangram-report.pdf" target="_blank" rel="noopener" aria-label="Open the full Pangram AI detection report">
+    <img src="/pangram-report-page-1.png" alt="First page of the Pangram AI detection report showing a 100% human-written score">
+    <span>Open the full Pangram report (PDF)</span>
+  </a>
+  <div class="transcript">
 <p>My normal flow is to have these long, meandering streams of consciousness — this is one of them — and then take the transcript and ask an AI to clean it up. Which is necessary, because the AI makes typos when it transcribes.</p>
 <p>So in some sense, if you are simply using AI to make the transcript&#x27;s fidelity to your words higher, that seems perfectly kosher. In some sense you are decreasing the AI, because rather than allowing it to make mistakes in your words, you are allowing it to fix them. And I think AI is pretty good at this. You tell it: go through my transcript, look for transcription typos, and use context and the broad body of what I&#x27;m saying to fill in the words you think I intended. To me, that seems totally fine.</p>
 <p>Now, the second step is that you can then have Claude try to package your arguments into something more coherent. And you can still say, hey, use my own words. But at this point, when the structure of the argument is sort of outsourced, you do lose the human soul of your writing.</p>
@@ -145,52 +113,15 @@
 <p>And that goes to this deeper point, which is that we all live in these hermetically sealed bubbles. We can never see outside of our own first-personhood. There&#x27;s the philosophical zombie problem: do we even know that there&#x27;s any light behind the eyes inside the minds of anyone else, or are they all just zombies? And obviously conversation and writing, the trading of words, is one way in which you can transcend the boundaries of self. So I think that&#x27;s almost the spiritual value of writing and reading. And when you pass everything through the layer of Claude, you divorce form and content, and what you realize is that no one really cared about content. They cared about the form.</p>
 <p>And look, this is maybe different for fiction and nonfiction. Nonfiction is more information retrieval in some sense. If you&#x27;re reading a self-help book, or a technical book on some matter, it really is: is the information correct, and is it written in a legible manner? But the best nonfiction is more than that. The best nonfiction is story, it&#x27;s character. It&#x27;s weaving the true facts on the ground into the structure of a narrative in a way that makes it maximally compelling while also teaching you. And that requires the voice of the writer. If you want to just read an encyclopedia page, then AI is perfectly good.</p>
 <p>So, yeah, I think that wraps up the thought. The exercise now is to have Claude fix this, and then do it on my own. But isn&#x27;t this something interesting? Can this leverage the raw thought itself? I can imagine an interesting thing, which is almost like a blog. It starts with the voice note. You include the audio, you include the transcript, then you include the Claude-cleaned-up transcript. At the very top you would include your article, and maybe you also include a Claude article, so you can sort of compare the difference. That might be an interesting format. I like that idea.</p>
-    </div>
-  </section>
-  <section id="human-essay">
-    <p class="eyebrow">Layer 05</p>
-    <h2>The essay (human)</h2>
-    <div class="placeholder"><p>To be written.</p></div>
-  </section>
-  <section id="claude-essay">
-    <p class="eyebrow">Layer 06</p>
-    <h2>The essay (Claude)</h2>
-    <div class="placeholder"><p>To be written.</p></div>
-  </section>
-  <footer>Draft structure · August 2026</footer>
-</main>
-<script>
-(() => {
-  const button = document.querySelector('.play-button');
-  const fill = document.querySelector('.progress-fill');
-  const time = document.querySelector('.time');
-  let context, buffer, source, startedAt = 0, offset = 0, playing = false, loading = false;
-  const fmt = sec => `${Math.floor(sec / 60)}:${String(Math.floor(sec % 60)).padStart(2, '0')}`;
-  const tick = () => {
-    if (!playing) return;
-    const current = Math.min(buffer.duration, offset + context.currentTime - startedAt);
-    fill.style.width = `${current / buffer.duration * 100}%`;
-    time.textContent = `${fmt(current)} / 9:37`;
-    if (current >= buffer.duration) { playing = false; offset = 0; button.textContent = '▶'; return; }
-    requestAnimationFrame(tick);
-  };
-  button.addEventListener('click', async () => {
-    if (loading) return;
-    if (!buffer) {
-      loading = true; button.textContent = '…';
-      context = new (window.AudioContext || window.webkitAudioContext)();
-      const data = await fetch('1-ai-writing-original-voice-note.mp3').then(r => r.arrayBuffer());
-      buffer = await context.decodeAudioData(data);
-      loading = false;
-    }
-    if (playing) {
-      offset += context.currentTime - startedAt; source.stop(); playing = false; button.textContent = '▶'; return;
-    }
-    await context.resume();
-    source = context.createBufferSource(); source.buffer = buffer; source.connect(context.destination);
-    source.start(0, offset); startedAt = context.currentTime; playing = true; button.textContent = '❚❚'; tick();
-  });
-})();
-</script>
-</body>
-</html>
+  </div>
+</section>
+<section id="human-essay">
+  <p class="eyebrow">Layer 05</p>
+  <h2>The essay (human)</h2>
+  <div class="placeholder"><p>To be written.</p></div>
+</section>
+<section id="claude-essay">
+  <p class="eyebrow">Layer 06</p>
+  <h2>The essay (Claude)</h2>
+  <div class="placeholder"><p>To be written.</p></div>
+</section>
